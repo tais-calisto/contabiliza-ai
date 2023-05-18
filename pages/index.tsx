@@ -106,7 +106,7 @@ export default function Home() {
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
-      setError('Algo deu errao, por favor tente novamente.');
+      setError('Algo deu errado, por favor tente novamente.');
       console.log('error', error);
     }
   }
