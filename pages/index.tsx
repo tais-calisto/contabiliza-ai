@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to learn about this legal case?',
+        message: 'Olá! No que posso te ajudar?',
         type: 'apiMessage',
       },
     ],
@@ -48,7 +48,7 @@ export default function Home() {
     setError(null);
 
     if (!query) {
-      alert('Please input a question');
+      alert('Por favor, faça uma pergunta');
       return;
     }
 
@@ -106,7 +106,7 @@ export default function Home() {
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
-      setError('An error occurred while fetching the data. Please try again.');
+      setError('Algo deu errao, por favor tente novamente.');
       console.log('error', error);
     }
   }
@@ -137,7 +137,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/bot-image.png"
+                        src="/cf-logo.png"
                         alt="AI"
                         width="40"
                         height="40"
@@ -222,9 +222,7 @@ export default function Home() {
                     id="userInput"
                     name="userInput"
                     placeholder={
-                      loading
-                        ? 'Waiting for response...'
-                        : 'What is this legal case about?'
+                      loading ? 'Aguardando resposta...' : 'Faça uma pergunta'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -260,11 +258,7 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChainAI. Demo built by Mayo (Twitter: @mayowaoshin).
-          </a>
-        </footer>
+        <footer className="m-auto p-4"></footer>
       </Layout>
     </>
   );
