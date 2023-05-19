@@ -2,7 +2,7 @@ import { OpenAI } from 'langchain/llms/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
 
-const CONDENSE_PROMPT = `Dada a conversa a seguir e uma pergunta complementar, reformule a pergunta complementar para ser uma pergunta independente.
+const CONDENSE_PROMPT = `Dada a conversa a seguir e uma pergunta complementar, responde a pergunta complementar.
 
 Chat History:
 {chat_history}
