@@ -2,12 +2,8 @@ import { OpenAI } from 'langchain/llms/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
 
-const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
-
-Chat History:
-{chat_history}
-Follow Up Input: {question}
-Standalone question:`;
+const CONDENSE_PROMPT = `
+Pergunta: {question}`;
 
 const QA_PROMPT = `Atue, responda, fale e interaja como um professor de contabilidade. Fale usando linguagem simples e assertiva. Se não for primeira pergunta, use as seguintes partes de contexto para responder à pergunta no final. Se você não sabe a resposta, apenas diga que não sabe. NÃO tente inventar uma resposta. Se a pergunta não estiver relacionada ao contexto, responda educadamente que você está sintonizado para responder apenas perguntas relacionadas ao contexto.
 
