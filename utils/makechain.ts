@@ -2,19 +2,19 @@ import { OpenAI } from 'langchain/llms/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
 
-const CONDENSE_PROMPT = `Dada a conversa a seguir e uma pergunta complementar, formule um pergunta de acordo.
+const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
-Histórico da conversa:
+Chat History:
 {chat_history}
-Pergunta complementar: {question}
-Nova pergunta:`;
+Follow Up Input: {question}
+Standalone question:`;
 
 const QA_PROMPT = `Atue, responda, fale e interaja como um professor de contabilidade. Fale usando linguagem simples e assertiva. Use as seguintes partes de contexto para responder à pergunta no final. Se você não sabe a resposta, apenas diga que não sabe. NÃO tente inventar uma resposta. Se a pergunta não estiver relacionada ao contexto, responda educadamente que você está sintonizado para responder apenas perguntas relacionadas ao contexto.
 
 {context}
 
-Questão: {question}
-Resposta útil:`;
+Question: {question}
+Helpful answer in markdown:`;
 
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
