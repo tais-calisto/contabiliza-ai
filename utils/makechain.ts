@@ -27,7 +27,7 @@ export const makeChain = (vectorstore: PineconeStore) => {
     vectorstore.asRetriever(),
     {
       qaTemplate: QA_PROMPT,
-      questionGeneratorTemplate: CONDENSE_PROMPT,
+      // questionGeneratorTemplate: CONDENSE_PROMPT,
       returnSourceDocuments: false, //The number of source documents returned is 4 by default
     },
   );
