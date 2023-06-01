@@ -248,6 +248,11 @@ export default function Home() {
                 </form>
               </div>
             </div>
+             {error && (
+              <div className="border border-red-400 rounded-md p-4">
+                <p className="text-red-500">{error}</p>
+              </div>
+            )}
           </main>
         </div>
       </Layout>
