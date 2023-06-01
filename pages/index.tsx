@@ -255,7 +255,6 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4"></footer>
       </Layout>
     </>
   );
