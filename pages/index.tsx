@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Olá! No que posso te ajudar?',
+        message: 'Olá! Em que posso te ajudar?',
         type: 'apiMessage',
       },
     ],
